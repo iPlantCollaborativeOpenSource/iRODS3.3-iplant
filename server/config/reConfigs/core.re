@@ -434,7 +434,7 @@ acPostProcForModifyUser(*UserName,*Option,*NewValue) { }
 # new values have the prefix n:, v:, u:, and "" means that that value remain unchanged
 acPreProcForModifyAVUMetadata(*Option,*ItemType,*ItemName,*AName,*AValue,*AUnit, *NAName, *NAValue, *NAUnit) { }
 # add, adda, addw, set, rm, rmw, rmi
-acPreProcForModifyAVUMetadata(*Option,*ItemType,*ItemName,*AName,*AValue,*AUnit) { }
+acPreProcForModifyAVUMetadata(*Option,*SourceItemType,*TargetItemType,*SourceItemName,*TargetItemName) { }
 # cp
 acPreProcForModifyAVUMetadata(*Option,*ItemType,*SourceItemName,*TargetItemName) { }
 #
@@ -447,8 +447,8 @@ acPreProcForModifyAVUMetadata(*Option,*ItemType,*SourceItemName,*TargetItemName)
 #      # copy old acPreProcForModifyAVUMetadata(*Option, *ItemType, *ItemName, *AName, *AValue)
 #  }
 #  or {
-#      # copy old acPreProcForModifyAVUMetadata(*Option,*ItemType,*ItemName,*AName,*AValue,*AUnit)
-#  }
+#acPreProcForModifyAVUMetadata(*Option,*SourceItemType,*TargetItemType,*SourceItemName,*TargetItemName) { 
+#  acPreProcForModifyAVUMetadata(*Option, *SourceItemType, *SourceItemName, *TargetItemName, "", "");
 #}
 #acPreProcForModifyAVUMetadata(*Option,*ItemType,*SourceItemName,*TargetItemName) { 
 #  acPreProcForModifyAVUMetadata(*Option, *ItemType, *SourceItemName, *TargetItemName, "", "");
@@ -460,7 +460,7 @@ acPreProcForModifyAVUMetadata(*Option,*ItemType,*SourceItemName,*TargetItemName)
 # See acPreProcForModifyAVUMetadata for which rule to implement and backward compatibility 
 acPostProcForModifyAVUMetadata(*Option,*ItemType,*ItemName,*AName,*AValue,*AUnit, *NAName, *NAValue, *NAUnit) { }
 acPostProcForModifyAVUMetadata(*Option,*ItemType,*ItemName,*AName,*AValue,*AUnit) { }
-acPostProcForModifyAVUMetadata(*Option,*ItemType,*SourceItemName,*TargetItemName) { }
+acPostProcForModifyAVUMetadata(*Option,*SourceItemType,*TargetItemType,*SourceItemName,*TargetItemName) { }
 #
 # 26) acPreProcForCreateUser - This rule set the pre-processing policy for
 # creating a new user.
