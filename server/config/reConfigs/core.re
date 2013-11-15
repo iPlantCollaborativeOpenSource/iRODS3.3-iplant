@@ -434,9 +434,9 @@ acPostProcForModifyUser(*UserName,*Option,*NewValue) { }
 # new values have the prefix n:, v:, u:, and "" means that that value remain unchanged
 acPreProcForModifyAVUMetadata(*Option,*ItemType,*ItemName,*AName,*AValue,*AUnit, *NAName, *NAValue, *NAUnit) { }
 # add, adda, addw, set, rm, rmw, rmi
-acPreProcForModifyAVUMetadata(*Option,*SourceItemType,*TargetItemType,*SourceItemName,*TargetItemName) { }
+acPreProcForModifyAVUMetadata(*Option,*ItemType,*ItemName,*AName,*AValue,*AUnit) { }
 # cp
-acPreProcForModifyAVUMetadata(*Option,*ItemType,*SourceItemName,*TargetItemName) { }
+acPreProcForModifyAVUMetadata(*Option,*SourceItemType,*TargetItemType,*SourceItemName,*TargetItemName) { }
 #
 # for backward compatibility
 #acPreProcForModifyAVUMetadata(*Option,*ItemType,*ItemName,*AName,*AValue,*AUnit, *NAName, *NAValue, *NAUnit) {
